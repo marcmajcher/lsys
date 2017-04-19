@@ -13,7 +13,7 @@ class Turtle {
     this.y = this.canvas.height / 2;
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
-    this.ctx.strokeStyle = '#ff0000';
+    // this.ctx.strokeStyle = '#ff0000';
 
     this.direction = 0;
     this.states = [];
@@ -63,12 +63,12 @@ class Turtle {
   }
 
   right(angle) {
-    this.dir += (angle * (Math.PI / 180));
+    this.direction += (angle * (Math.PI / 180));
     return this;
   }
 
   left(angle) {
-    this.dir -= (angle * (Math.PI / 180));
+    this.direction -= (angle * (Math.PI / 180));
     return this;
   }
 
