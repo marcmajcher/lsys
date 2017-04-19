@@ -44,8 +44,11 @@ class Lsystem {
     }
   }
 
-  render() {
+  render(x, y) {
     this.turtle.reset();
+    if (x && y) {
+      this.turtle.moveTo(x, y);
+    }
     for (let i = 0; i < this.moves.length; i++) {
       this.rules[this.moves[i]]();
     }
