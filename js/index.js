@@ -41,11 +41,11 @@ function render() {
   // };
   // const ls = new Lsystem(turtle, axiom, prods, 10, 25.7);
 
-  const axiom = '---X';
+  const axiom = 'X';
   const prods = {
     X: 'F[+X][-X]FX',
     F: 'FF'
   };
-  const ls = new Lsystem(turtle, axiom, prods, 10, 25.7);
-  ls.step(5).render(400, 700);
+  const ls = new Lsystem(turtle, axiom, prods, 5, 25.7);
+  ls.step(6).render(400, 700, 270);
 }

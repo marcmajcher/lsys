@@ -47,10 +47,13 @@ class Lsystem {
     return this;
   }
 
-  render(x, y) {
+  render(x, y, angle) {
     this.turtle.reset();
     if (x && y) {
       this.turtle.moveTo(x, y);
+    }
+    if (angle) {
+      this.turtle.turn(angle);
     }
     for (let i = 0; i < this.moves.length; i++) {
       const fn = this.rules[this.moves[i]];

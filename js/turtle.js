@@ -15,12 +15,12 @@ class Turtle {
   reset() {
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
-    this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
 
     this.direction = 0;
     this.states = [];
     this.penDown();
+    this.ctx.beginPath();
   }
 
   penDown() {
@@ -37,7 +37,6 @@ class Turtle {
     this.x = x;
     this.y = y;
     this.ctx.moveTo(x, y);
-    this.ctx.beginPath();
     return this;
   }
 
@@ -45,10 +44,9 @@ class Turtle {
     if (this.draw) {
       this.ctx.lineTo(this.x, this.y);
       this.ctx.stroke();
+      this.ctx.closePath();
     }
-    else {
-      this.ctx.moveTo(this.x, this.y);
-    }
+    this.ctx.moveTo(this.x, this.y);
 
     return this;
   }
@@ -63,6 +61,10 @@ class Turtle {
     this.x += distance * Math.cos(this.direction - Math.PI);
     this.y += distance * Math.sin(this.direction - Math.PI);
     return this._go();
+  }
+
+  turn(angle) {
+    this.direction = angle * (Math.PI / 180);
   }
 
   right(angle) {
@@ -91,6 +93,7 @@ class Turtle {
       this.y = state.y;
       this.direction = state.d;
     }
+    this.moveTo(this.x, this.y);
     return this;
   }
 }
