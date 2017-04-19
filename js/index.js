@@ -8,17 +8,12 @@
 
 function render() {
   const turtle = new Turtle('turtle-canvas');
-  const axiom = 'F';
+  const axiom = 'F-F-F-F';
   const prods = {
-    F: 'F+F'
+    F: 'F-F+F+FF-F-F+F'
   };
-  const ls = new Lsystem(turtle, axiom, prods);
-
-  console.log(ls.moves);
-  ls.transform();
-  console.log(ls.moves);
-  ls.transform();
-  console.log(ls.moves);
-  ls.transform();
-  console.log(ls.moves);
+  const ls = new Lsystem(turtle, axiom, prods, 10);
+  ls.step();
+  ls.step();
+  ls.render();
 }

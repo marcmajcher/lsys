@@ -9,6 +9,10 @@ class Turtle {
   constructor(canvasid) {
     this.canvas = document.getElementById(canvasid);
     this.ctx = this.canvas.getContext('2d');
+    this.reset();
+  }
+
+  reset() {
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
     this.ctx.beginPath();
