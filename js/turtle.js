@@ -8,11 +8,16 @@
 class Turtle {
   constructor(canvasid) {
     this.canvas = document.getElementById(canvasid);
+    this.ctx = this.canvas.getContext('2d');
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
+    this.ctx.beginPath();
+    this.ctx.moveTo(this.x, this.y);
+    this.ctx.strokeStyle = '#ff0000';
+
     this.direction = 0;
-    this.draw = true;
     this.states = [];
+    this.penDown();
   }
 
   penDown() {
@@ -28,16 +33,18 @@ class Turtle {
   moveTo(x, y) {
     this.x = x;
     this.y = y;
-    this.canvas.moveTo(x, y);
+    this.ctx.moveTo(x, y);
+    this.ctx.beginPath();
     return this;
   }
 
   _go() {
     if (this.draw) {
-      this.canvas.lineTo(this.x, this.y);
+      this.ctx.lineTo(this.x, this.y);
+      this.ctx.stroke();
     }
     else {
-      this.canvas.moveTo(this.x, this.y);
+      this.ctx.moveTo(this.x, this.y);
     }
 
     return this;
