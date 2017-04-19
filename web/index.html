@@ -10,19 +10,37 @@
   <title>Document</title>
 </head>
 
-<body onload="render()">
+<body onload="setup();render()">
   <canvas id="turtle-canvas" width="800" height="800"></canvas>
 
-  <form>
-    <div>Axiom: <input type="text"></div>
-    <div>Productions: <input type="text"></div>
-    <div>Distance: <input type="number"></div>
-    <div>Angle: <input type="number"></div>
-    <div>Steps: <input type="number"></div>
-    <div>
-      <button>Render</button>
-    </div>
-  </form>
+  <div class="lform">
+    <form id="lsys" class="form-group">
+      <div>
+        <label for="axiom">Axiom:</label>
+        <input class="form-control" type="text" name="axiom" value="X">
+      </div>
+      <div>
+        <label for="prods">Productions:</label>
+        <input class="form-control" type="text" name="prods" value="X:F-[[X]+X]+F[+FX]-X;F:FF">
+      </div>
+      <div>
+        <label for="dist">Distance:</label>
+        <input class="form-control" type="number" name="dist" value="8">
+      </div>
+      <div><label for="angle">Angle:</label>
+        <input class="form-control" type="number" name="angle" value="25.7">
+      </div>
+      <div>
+        <label for="steps">Steps:</label>
+        <input class="form-control" type="number" name="steps" value="5">
+      </div>
+      <div>
+        <button id="btn-render">
+          Render
+        </button>
+      </div>
+    </form>
+  </div>
 
 </body>
 

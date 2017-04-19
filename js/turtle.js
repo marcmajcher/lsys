@@ -44,7 +44,7 @@ class Turtle {
     if (this.draw) {
       this.ctx.lineTo(this.x, this.y);
       this.ctx.stroke();
-      this.ctx.closePath();
+      // this.ctx.closePath();
     }
     this.ctx.moveTo(this.x, this.y);
     return this;
