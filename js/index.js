@@ -35,11 +35,17 @@ function render() {
   // };
   // const ls = new Lsystem(turtle, axiom, prods, 10);
 
-  const axiom = '---F';
+  // const axiom = '---F';
+  // const prods = {
+  //   F: 'F[+F]F[-F]F'
+  // };
+  // const ls = new Lsystem(turtle, axiom, prods, 10, 25.7);
+
+  const axiom = '---X';
   const prods = {
-    F: 'F[+F]F[-F]F'
+    X: 'F[+X][-X]FX',
+    F: 'FF'
   };
   const ls = new Lsystem(turtle, axiom, prods, 10, 25.7);
-
-  ls.step(3).render();
+  ls.step(5).render(400, 700);
 }
