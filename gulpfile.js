@@ -34,9 +34,7 @@ gulp.task('clean', () =>
 );
 
 gulp.task('connect', () => {
-  connect.server({
-    livereload: true
-  });
+  connect.server();
 });
 
 gulp.task('pages', () => {
@@ -97,6 +95,5 @@ gulp.task('watch', () => {
     'gulpfile.js',
     'test/**/*.js',
   ], ['jshint', 'eslint']);
-  gulp.watch('js/**/*.js', ['scripts']);
-  gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch(['js/**/*.js', 'scss/**/*.scss', 'web/**/*.html'], ['build']);
 });
