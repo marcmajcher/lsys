@@ -13,7 +13,6 @@ class Turtle {
     this.y = this.canvas.height / 2;
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, this.y);
-    // this.ctx.strokeStyle = '#ff0000';
 
     this.direction = 0;
     this.states = [];

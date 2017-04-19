@@ -2,21 +2,23 @@
 
 /* eslint-env browser */
 /* exported render */
-/* globals Turtle */
+/* globals Turtle, Lsystem */
 
 /* eslint no-magic-numbers: 0 */
 
 function render() {
-  const t = new Turtle('turtle-canvas');
-  t.forward(50);
-  t.penUp();
-  t.forward(50);
-  t.penDown();
-  t.forward(50);
-  t.left(90);
-  t.forward(100);
-  t.left(90);
-  t.forward(50);
-  t.left(90);
-  t.forward(100);
+  const turtle = new Turtle('turtle-canvas');
+  const axiom = 'F';
+  const prods = {
+    F: 'F+F'
+  };
+  const ls = new Lsystem(turtle, axiom, prods);
+
+  console.log(ls.moves);
+  ls.transform();
+  console.log(ls.moves);
+  ls.transform();
+  console.log(ls.moves);
+  ls.transform();
+  console.log(ls.moves);
 }
