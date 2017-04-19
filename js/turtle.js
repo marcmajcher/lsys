@@ -15,6 +15,7 @@ class Turtle {
   reset() {
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.ctx.moveTo(this.x, this.y);
 
     this.direction = 0;

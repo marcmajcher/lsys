@@ -1,8 +1,24 @@
 canvas#turtle-canvas {
   border: 1px solid black;
+  float: left;
+  margin: 0 30px;
 }
 
 div.lform {
-  float: right;
+  font-size: 1.5em;
+  margin: 20px;
   text-align: left;
+
+  div {
+    margin-bottom: 16px;
+  }
+
+  input {
+    font-size: 1em;
+    width: 400px;
+  }
+
+  button {
+    font-size: 1em;
+  }
 }
