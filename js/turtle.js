@@ -47,7 +47,6 @@ class Turtle {
       this.ctx.closePath();
     }
     this.ctx.moveTo(this.x, this.y);
-
     return this;
   }
 

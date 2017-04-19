@@ -41,11 +41,19 @@ function render() {
   // };
   // const ls = new Lsystem(turtle, axiom, prods, 10, 25.7);
 
+  // const axiom = 'X';
+  // const prods = {
+  //   X: 'F[+X][-X]FX',
+  //   F: 'FF'
+  // };
+  // const ls = new Lsystem(turtle, axiom, prods, 5, 25.7);
+  // ls.step(6).render(400, 700, 270);
+
   const axiom = 'X';
   const prods = {
-    X: 'F[+X][-X]FX',
+    X: 'F-[[X]+X]+F[+FX]-X',
     F: 'FF'
   };
-  const ls = new Lsystem(turtle, axiom, prods, 5, 25.7);
-  ls.step(6).render(400, 700, 270);
+  const ls = new Lsystem(turtle, axiom, prods, 8, 25.7);
+  ls.step(5).render(400, 750, 270);
 }
