@@ -21,15 +21,25 @@ function render() {
   // };
   // const ls = new Lsystem(turtle, axiom, prods, 10);
 
-  const axiom = 'R';
-  const prods = {
-    L: 'R+L+R',
-    R: 'L-R-L'
-  };
-  const ls = new Lsystem(turtle, axiom, prods, 10, 60);
-  ls.rules.R = ls.rules.F;
-  ls.rules.L = ls.rules.F;
+  // const axiom = 'R';
+  // const prods = {
+  //   L: 'R+L+R',
+  //   R: 'L-R-L'
+  // };
+  // const ls = new Lsystem(turtle, axiom, prods, 10, 60);
 
-  ls.step(6);
-  ls.render(80, 150);
+  // const axiom = '-L';
+  // const prods = {
+  //   L: 'LF+RFR+FL-F-LFLFL-FRFR+',
+  //   R: '-LFLF+RFRFR+F+RF-LFL-FR'
+  // };
+  // const ls = new Lsystem(turtle, axiom, prods, 10);
+
+  const axiom = '---F';
+  const prods = {
+    F: 'F[+F]F[-F]F'
+  };
+  const ls = new Lsystem(turtle, axiom, prods, 10, 25.7);
+
+  ls.step(3).render();
 }

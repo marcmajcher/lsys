@@ -25,7 +25,9 @@ class Lsystem {
         this.turtle.forward(this.distance);
       },
       '+': () => this.turtle.right(this.angle),
-      '-': () => this.turtle.left(this.angle)
+      '-': () => this.turtle.left(this.angle),
+      '[': () => this.turtle.save(),
+      ']': () => this.turtle.restore()
     };
   }
 
@@ -42,6 +44,7 @@ class Lsystem {
         this.moves += this.prods[string[i]] || string[i];
       }
     }
+    return this;
   }
 
   render(x, y) {
@@ -50,8 +53,12 @@ class Lsystem {
       this.turtle.moveTo(x, y);
     }
     for (let i = 0; i < this.moves.length; i++) {
-      this.rules[this.moves[i]]();
+      const fn = this.rules[this.moves[i]];
+      if (fn) {
+        fn();
+      }
     }
+    return this;
   }
 
 }
