@@ -24,11 +24,12 @@ class Lsystem {
         this.turtle.penUp();
         this.turtle.forward(this.distance);
       },
-      '+': () => this.turtle.right(this.angle),
-      '-': () => this.turtle.left(this.angle),
+      '-': () => this.turtle.right(this.angle),
+      '+': () => this.turtle.left(this.angle),
       '[': () => this.turtle.save(),
       ']': () => this.turtle.restore()
     };
+    this.rules.R = this.rules.L = this.rules.F;
   }
 
   reset() {
@@ -47,14 +48,11 @@ class Lsystem {
     return this;
   }
 
-  render(x, y, angle) {
+  render(x = 0, y = 0, angle = 0) {
     this.turtle.reset();
-    if (x && y) {
-      this.turtle.moveTo(x, y);
-    }
-    if (angle) {
-      this.turtle.turn(angle);
-    }
+    this.turtle.moveTo(x, y);
+    this.turtle.turn(angle);
+
     for (let i = 0; i < this.moves.length; i++) {
       const fn = this.rules[this.moves[i]];
       if (fn) {

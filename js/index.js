@@ -34,47 +34,32 @@ function setup() {
   });
 }
 
-const sets = {
-  one: {
-    axiom: 'F-F-F-F',
-    prods: {
-      F: 'F+F-F-FF+F+F-F'
-    },
-    angle: 90,
-    dist: 6,
-    steps: 3,
-    startx: 200,
-    starty: 600,
-    starta: 0
-  }
-};
+
+const setList = [
+  'F-F-F-F|F:F+F-F-FF+F+F-F|6|90|3|200|200|0',
+  '-F|F:F+F-F-F+F|9|90|4|760|200|90',
+  'R|L:R+L+R;R:L-R-L|10|60|6|80|620|0',
+  'F+F+F+F|F:F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF;f:ffffff|10|90|2|220|550|0',
+  'F-F-F-F|F:FF-F-F-F-F-F+F|8|90|3|400|200|0',
+  'F-F-F-F|F:FF-F-F-F-FF|14|90|3|200|200|0',
+  'F-F-F-F|F:FF-F+F-F-FF|25|90|3|550|450|0',
+  'F-F-F-F|F:FF-F--F-F|8|90|4|80|70|0',
+  'F|F:F[+F]F[-F]F|8|25|4|400|700|270',
+  'F|F:F[+F]F[-F][F]|8|20|5|400|700|270',
+  'F|F:FF-[-F+F+F]+[+F-F-F]|10|22.5|4|400|700|270',
+  'X|X:F[+X]F[-X]+X;F:FF|2|20|7|400|700|270',
+  'X|X:F[+X][-X]FX;F:FF|3|25.7|7|400|790|270',
+  'X|X:F-[[X]+X]+F[+FX]-X;F:FF|9|25.7|5|400|790|270',
+];
+
 
 function fillForm(set) {
   const form = document.getElementById('lsys');
-  form.axiom.value = sets[set].axiom;
-  form.angle.value = sets[set].angle;
-  form.dist.value = sets[set].dist;
-  form.steps.value = sets[set].steps;
-  form.startx.value = sets[set].startx;
-  form.starty.value = sets[set].starty;
-  form.starta.value = sets[set].starta;
-  const prodSet = sets[set].prods;
-  form.prods.value = Object.keys(prodSet).map(key =>
-    `${key}:${prodSet[key]}`).join(';');
+  [form.axiom.value, form.prods.value, form.dist.value, form.angle.value,
+    form.steps.value, form.startx.value, form.starty.value, form.starta.value
+  ] = setList[set].split('|');
 }
 
-// const axiom = '-F';
-// const prods = {
-//   F: 'F+F-F-F+F'
-// };
-// const ls = new Lsystem(turtle, axiom, prods, 10);
-
-// const axiom = 'R';
-// const prods = {
-//   L: 'R+L+R',
-//   R: 'L-R-L'
-// };
-// const ls = new Lsystem(turtle, axiom, prods, 10, 60);
 
 // const axiom = '-L';
 // const prods = {
