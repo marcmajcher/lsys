@@ -27,14 +27,6 @@ function render() {
   ls.step(steps).render(startx, starty, starta);
 }
 
-function setup() {
-  document.getElementById('btn-render').addEventListener('click', (e) => {
-    e.preventDefault();
-    render();
-  });
-}
-
-
 const setList = [
   'F-F-F-F|F:F+F-F-FF+F+F-F|6|90|3|200|200|0',
   '-F|F:F+F-F-F+F|9|90|4|760|200|90',
@@ -52,7 +44,6 @@ const setList = [
   'X|X:F-[[X]+X]+F[+FX]-X;F:FF|9|25.7|5|400|790|270',
 ];
 
-
 function fillForm(set) {
   const form = document.getElementById('lsys');
   [form.axiom.value, form.prods.value, form.dist.value, form.angle.value,
@@ -61,29 +52,12 @@ function fillForm(set) {
 }
 
 
-// const axiom = '-L';
-// const prods = {
-//   L: 'LF+RFR+FL-F-LFLFL-FRFR+',
-//   R: '-LFLF+RFRFR+F+RF-LFL-FR'
-// };
-// const ls = new Lsystem(turtle, axiom, prods, 10);
-
-// const axiom = '---F';
-// const prods = {
-//   F: 'F[+F]F[-F]F'
-// };
-// const ls = new Lsystem(turtle, axiom, prods, 10, 25.7);
-
-// const axiom = 'X';
-// const prods = {
-//   X: 'F[+X][-X]FX',
-//   F: 'FF'
-// };
-// const ls = new Lsystem(turtle, axiom, prods, 5, 25.7);
-// ls.step(6).render(400, 700, 270);
-
-// const axiom = 'X';
-// const prods = {
-//   X: 'F-[[X]+X]+F[+FX]-X',
-//   F: 'FF'
-// };
+function setup() {
+  document.getElementById('btn-render').addEventListener('click', (e) => {
+    e.preventDefault();
+    render();
+  });
+  document.getElementById('lsys-select').addEventListener('change', (e) => {
+    fillForm(e.target.selectedIndex);
+  });
+}
