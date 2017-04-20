@@ -10,29 +10,41 @@
   <title>Document</title>
 </head>
 
-<body onload="setup();render()">
+<body onload="setup();fillForm('one');render()">
   <canvas id="turtle-canvas" width="800" height="800"></canvas>
 
   <div class="lform">
     <form id="lsys" class="form-group">
       <div>
         <label for="axiom">Axiom:</label><br>
-        <input class="form-control" type="text" name="axiom" value="X">
+        <input class="form-control" type="text" name="axiom">
       </div>
       <div>
         <label for="prods">Productions:</label><br>
-        <input class="form-control" type="text" name="prods" value="X:F-[[X]+X]+F[+FX]-X;F:FF">
+        <input class="form-control" type="text" name="prods">
       </div>
       <div>
         <label for="dist">Distance:</label><br>
-        <input class="form-control" type="number" name="dist" value="8">
+        <input class="form-control" type="number" name="dist">
       </div>
       <div><label for="angle">Angle:</label><br>
-        <input class="form-control" type="number" name="angle" value="25.7">
+        <input class="form-control" type="number" name="angle">
       </div>
       <div>
         <label for="steps">Steps:</label><br>
-        <input class="form-control" type="number" name="steps" value="5">
+        <input class="form-control" type="number" name="steps">
+      </div>
+      <div>
+        <label for="startx">Start X:</label><br>
+        <input class="form-control" type="number" name="startx">
+      </div>
+      <div>
+        <label for="starty">Start Y:</label><br>
+        <input class="form-control" type="number" name="starty">
+      </div>
+      <div>
+        <label for="starta">Start Angle:</label><br>
+        <input class="form-control" type="number" name="starta">
       </div>
       <div>
         <button id="btn-render">

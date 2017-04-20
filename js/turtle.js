@@ -1,7 +1,7 @@
 'use strict';
 
 /* eslint-env browser */
-/* eslint no-magic-numbers: ["error", { "ignore": [2, 180] }] */
+/* eslint no-magic-numbers: ["error", { "ignore": [0, 2, 180] }] */
 /* eslint no-underscore-dangle: 0 */
 /* exported Turtle */
 
